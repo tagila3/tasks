@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Наши Библиотеки</h1>
+    {% for lib in libs %}
+    <hr>
+        <h4>{{ lib.name }}</h4>
+        <h3> Книги </h3>
+        <h4> {{ lib.book.name }}</h4>
+        <h5> Автор: {{ lib.book.author}}</h5>
+    <hr>
+    {% endfor %}
+</body>
+</html>
