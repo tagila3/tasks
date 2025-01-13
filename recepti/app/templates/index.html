@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Рецепты</title>
+</head>
+<body>
+    <h1>Рецепты моей любимой еды</h1>
+    {% for recipe in recipes %}
+        <p><h2>Рецепт для </h2>{{ recipe.name }}</p>
+
+        <h3>Ингридиенты:</h3>
+        {% for ingredient in recipe.ingredients.all %}
+            <p>{{ ingredient.name }}</p>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>
