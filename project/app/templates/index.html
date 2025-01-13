@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Книги</title>
+</head>
+<body>
+    <h1>Книги</h1>
+    {% for book in books %}
+        <h2>{{ book.title }}</h2>
+        <p>Дата публикации: {{ book.publication_date }}</p>
+
+        <p>Авторы:
+            {% for author in book.author.all %}
+                {{ author.name }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+
+        <p>Жанры:
+            {% for genre in book.genre.all %}
+                {{ genre.name }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
