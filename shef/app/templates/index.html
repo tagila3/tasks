@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Наши шеф-повара и и их рецепты</h1>
+    {% for recept in recipts %}
+        <p><h3>Шеф: {{ recept.chef }}</h3></p>
+        <p><h3>Его рецепт: {{ recept.name }}</h3></p>
+        <a href="{% url 'delete' recept.id %}">Удалить Рецепт</a>
+    {% endfor %}
+    <hr>
+</body>
+</html>
