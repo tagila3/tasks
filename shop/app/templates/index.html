@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Наши заказы</h1>
+    {% for order in orders %}
+        <p>Заказ {{order.name}}</p>
+        <h4>Позиции заказа:</h4>
+        <p>{{order.position}}</p>
+    <hr>
+    {% endfor %}
+</body>
+</html>
