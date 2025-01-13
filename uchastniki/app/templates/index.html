@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>События:</h1>
+    {% for event in events %}
+    <hr>
+            <h3>{{ event.name }}</h3>
+            <h2>Участники:</h2>
+
+            {% for attendee in event.attendees.all %}
+                <p>{{ attendee.name }}</p>
+            {% endfor %}
+    <hr>
+    {% endfor %}
+</body>
+</html>
